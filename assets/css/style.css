@@ -14,6 +14,19 @@ body
     background-color: black
 }
 
+
+.crystal-image 
+{
+    width: 100px;
+    height: 100px;
+}
+
+.reset 
+{
+    width: 150px;
+    height: 150px;
+}
+
 /* h1
 {
     letter-spacing: 10px;

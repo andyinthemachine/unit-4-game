@@ -9,18 +9,28 @@
 
 </head>
 
+
+
+
+
 <body>
+
+  <div id="crystals">
+    <!-- We gave our crystal image the class ".crystal-image" to apply the resize-->
+  </div>
+  
+  <div class="reset">
+  </div>
 
   <div class="container">
     <div class="row">
       <div class="col-md-offset-2 col-md-8">
         <div class="jumbotron">
-          <h2>Crystal Game</h2>
+          <h1>Crystal Game</h1>
+          <h2>Target Value:<span id="random_number"></span></h2>
           <h3>Wins: <span id="wins"></span></h3>
-          <h1><span id="board"></span></h1>
-          <h3>Guesses left: <span id="guesses_left"></span></h3>
-          <h3>Your guesses so far: <span id="guesses"></span></h3>
-          <h2>Word was: <span id="game_word"></span></h2>
+          <h3>Losses: <span id="losses"></span></h3>
+          <h3>Your total so far: <span id="running_total"></span></h3>
         </div>
       </div>
     </div>
@@ -28,7 +38,7 @@
 
   <!-- link to jquery -->
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  
+
   <!-- link to js -->
   <script src="assets/javascript/game.js"></script>
 
