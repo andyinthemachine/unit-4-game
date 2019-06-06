@@ -5,6 +5,7 @@ var wins = 0;
 var losses = 0;
 var running_total;
 var number_options = [0, 0, 0, 0];
+var $images = [];
 
 
 
@@ -21,14 +22,12 @@ function reset_game() {
   random_number = Math.floor(Math.random() * 101) + 19;
   running_total = 0;
 
-  for (var i = 0; i < number_options.length; i++)
-  {
+  for (var i = 0; i < number_options.length; i++) {
     number_options[i] = Math.floor(Math.random() * 12) + 1;
   }
 
   reset_crystals();
 }
-
 
 function reset_crystals() {
   $("#crystals").empty();
@@ -41,28 +40,27 @@ function reset_crystals() {
   }
 }
 
+reset_game();
+update_display();
 
-  reset_game();
+// on-click event for button clicks of crystal images
+$("#crystals").on("click", ".crystal-image", function () {
+  var crystal_value = $(this).attr("data-crystalvalue");
+  crystal_value = parseInt(crystal_value);
+  console.log(crystal_value)
+  running_total += crystal_value;
+
+  if (running_total == random_number) {
+    wins++;
+    reset_game();
+  }
+  else if (running_total > random_number) {
+    losses++;
+    reset_game();
+  }
   update_display();
 
-  // on-click event for button clicks of crystal images
-  $("#crystals").on("click", ".crystal-image", function () {
-    var crystal_value = $(this).attr("data-crystalvalue");
-    crystal_value = parseInt(crystal_value);
-    console.log(crystal_value)
-    running_total += crystal_value;
-
-    if (running_total == random_number){
-      wins++;
-      reset_game();
-    }
-    else if (running_total > random_number) {
-      losses++;
-      reset_game();
-    }
-    update_display();
-
-  });
+});
 
 
 
