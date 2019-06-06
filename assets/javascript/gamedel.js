@@ -1,5 +1,9 @@
 
 
+
+//this js not active
+
+
 var random_number;
 var wins = 0;
 var losses = 0;

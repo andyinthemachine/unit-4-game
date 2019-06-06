@@ -4,7 +4,6 @@ var random_number;
 var wins = 0;
 var losses = 0;
 var running_total;
-// var number_options = [0, 0, 0, 0];
 var $images = [];
 var num_crystals = 4;
 
@@ -22,24 +21,20 @@ function reset_game() {
   running_total = 0;
 
   //get new random nums 1-12 and store them in crystals
-
   $images.forEach(function(item){
     item.attr("data-crystalvalue", Math.floor(Math.random() * 12) + 1); 
   });
 
 }
 
-
 function init_crystals() {
   for (var i = 0; i < num_crystals; i++) {
     $images.push($("<img>"));
     $images[i].addClass("crystal-image");
     $images[i].attr("src", "assets/images/crystal" + i + ".png");
-    // $images[i].attr("src", "http://cdn.playbuzz.com/cdn/35910209-2844-45c0-b099-f4d82878d54f/00261fda-4062-4096-81fd-8cf96b9034e8.jpg");
     $("#crystals").append($images[i]);
   }
 }
-
 
 init_crystals();
 reset_game();
